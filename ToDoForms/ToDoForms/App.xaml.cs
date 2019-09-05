@@ -7,11 +7,18 @@ namespace ToDoForms
 {
 	public partial class App : Application
 	{
+		public static string RutaDB;
+
 		public App()
 		{
 			InitializeComponent();
-
-			MainPage = new MainPage();
+			MainPage = new NavigationPage(new MainPage());
+		}
+		public App(string rutaDB)
+		{
+			InitializeComponent();
+			RutaDB = rutaDB;
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart()

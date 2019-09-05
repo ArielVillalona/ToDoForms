@@ -4,11 +4,11 @@
              xmlns:local="clr-namespace:ToDoForms"
              x:Class="ToDoForms.MainPage">
 
-    <StackLayout>
+    <StackLayout VerticalOptions="Center" Margin="20">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Entry x:Name="UsuarioEntry" Placeholder="Nombre de usuario"/>
+        <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True"/>
+        <Button Text="Iniciar Sesion" Clicked="Button_Clicked"/>
+        <Label x:Name="resultadoLabel" HorizontalOptions="Center"/>
     </StackLayout>
-
 </ContentPage>

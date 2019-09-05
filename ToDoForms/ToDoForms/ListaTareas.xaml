@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoForms.ListaTareas">
+    <ListView x:Name="ListaTareaListview">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Nombre}" Detail="{Binding Fecha}">
+                    <TextCell.ContextActions>
+                        <MenuItem Clicked="MenuItem_Clicked" Text="Completar" CommandParameter="{Binding}" />
+                    </TextCell.ContextActions>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

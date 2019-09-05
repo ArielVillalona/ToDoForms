@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace ToDoForms.Droid
 {
@@ -19,7 +20,10 @@ namespace ToDoForms.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+			string nombreArchivo = "baseDatos.sqlite";
+			string ruta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+			string ruta_db= Path.Combine(ruta,nombreArchivo);
+			LoadApplication(new App(ruta_db));
         }
     }
 }
